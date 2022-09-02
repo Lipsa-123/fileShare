@@ -10,8 +10,6 @@ app.use(express.json());
 connectDB();
 
 //Cors
-
-// console.log(process.env.ALLOWED_CLIENTS)
 const corsOptions={
     origin:process.env.ALLOWED_CLIENTS.split(',')
 }
@@ -20,7 +18,6 @@ const corsOptions={
 app.use(cors(corsOptions));
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs');
-
 
 app.use('/api/files', require('./routes/files'))
 app.use('/files', require('./routes/show'))
