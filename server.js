@@ -10,6 +10,8 @@ app.use(express.json());
 connectDB();
 
 //Cors
+
+// console.log(process.env.ALLOWED_CLIENTS)
 const corsOptions={
     origin:process.env.ALLOWED_CLIENTS.split(',')
 }
